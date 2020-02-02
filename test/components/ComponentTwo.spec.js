@@ -21,12 +21,12 @@ afterEach(() => {
   wrapper.destroy()
 })
 
-describe('ComponentWithTooltip.vue:', () => {
+describe('ComponentTwo.vue:', () => {
   it('1. Mounts properly', () => {
     expect(wrapper.isVueInstance()).toBe(true) // Ok
   })
 
-  it('2. User interface provides one help icon with tooltip text', async () => {
+  it('2. Access children by ID', async () => {
     const icons = wrapper.findAll('.v-icon')
     expect(icons.length).toBe(1) // Ok
 
@@ -36,13 +36,8 @@ describe('ComponentWithTooltip.vue:', () => {
     helpIcon.trigger('mouseenter')
     await wrapper.vm.$nextTick()
 
-    const e1 = wrapper.find('#id2')
-    console.log(e1)
-    /*
-    requestAnimationFrame(() => {
-      expect(wrapper.find('#id1').text()).toEqual('science') // why this fails ?
-      done()
-    })*/
+    const e1 = wrapper.find('#id2') // or id3
+    console.log(e1) // undefined
   })
 })
 
