@@ -7,11 +7,10 @@ module.exports = {
   moduleFileExtensions: ['js', 'vue', 'json'],
   transform: {
     '^.+\\.js$': 'babel-jest',
-    '.*\\.(vue)$': 'vue-jest'
+    '.*\\.(vue)$': 'vue-jest',
+    '\\.(jpg|jpeg|png|gif)$': 'jest-transform-stub',
+    '\\.(css|less)$': 'jest-transform-stub'
   },
-  'collectCoverage': true,
-  'collectCoverageFrom': [
-    '<rootDir>/components/**/*.vue',
-    '<rootDir>/pages/**/*.vue'
-  ]
+  setupFiles: ['<rootDir>/test/setup.js'],
+  testMatch: ["**/test/**/*spec.js"]
 }

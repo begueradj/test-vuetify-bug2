@@ -1,5 +1,5 @@
 <template>
-  <component-two tooltipText="foo" />
+  <component-two tooltip-text="foo" />
 </template>
 
 <script>
